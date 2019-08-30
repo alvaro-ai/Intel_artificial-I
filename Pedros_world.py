@@ -29,10 +29,10 @@ class Entorno:
         self.world[self.peterX][self.peterY] = 0
         self.rendimiento = self.rendimiento+ 1
 
-    def mover(self, posX, posY):
-        if (posX >= 0 and posX < self.totalX) and (posY >= 0 and posY < self.totalY):
-            self.peterX = posX
-            self.peterY = posY
+    def mover(self, X, Y):
+        if (X >= 0 and X < self.totalX) and (Y >= 0 and Y < self.totalY):
+            self.peterX = X
+            self.peterY = Y
             self.acciones = self.acciones - 1
             return True
         return False
@@ -44,7 +44,7 @@ class Entorno:
 
 
     def perfomance(self):
-        total_casillas = self.totalXX * self.totalYY
+        total_casillas = self.totalX * self.totalY
         cant_sucias = (self.dirt_rate * total_casillas) / 100
         cant_sucias = redondeo(cant_sucias)
         limpio = self.rendimiento * 100 / cant_sucias
